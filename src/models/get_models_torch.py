@@ -14,7 +14,7 @@ class CosfaceModel():
         model_path = 'pretrain_model/cosface_ACC99.28.pth'
 
         self.model = cosface_model()
-        self.model.load_state_dict(torch.load(model_path))
+        self.model.load_state_dict(torch.load(model_path, map_location=device))
         self.model.eval()
         self.model.to(device)
     
@@ -38,10 +38,10 @@ class SpherefaceModel():
         
         model_path = 'pretrain_model/sphere20a_20171020.pth'
 
-        self.model = sphere20a()
-        self.model.load_state_dict(torch.load(model_path))
+        self.model = sphere20a(feature=True)
+        self.model.load_state_dict(torch.load(model_path), strict=False)
         self.model.eval()
-        self.model.feature = True
+        # self.model.feature = True
         self.model.to(device)
     
         self.device = device
@@ -100,7 +100,7 @@ class ArcfaceModel2():
         model_path = 'pretrain_model/ms1mv3_arcface_r18_fp16.pth'
 
         self.model = iresnet18()
-        pretrained_dict = torch.load(model_path)
+        pretrained_dict = torch.load(model_path, map_location=device)
         # pretrained_dict = {k.replace('module.',''): v for k, v in pretrained_dict.items() }
         self.model.load_state_dict(pretrained_dict)
         self.model.eval()

@@ -98,6 +98,13 @@ class LFWImagePairList():
         #return (img1.unsqueeze(0), img1_.unsqueeze(0)), (img2.unsqueeze(0), img2_.unsqueeze(0)), sameflag
         return (img1, img1_), (img2, img2_), sameflag
     
+    def trans_numpy(self, img):
+        
+        img = np.array(img)
+        img = np.array( img/255, dtype=np.float32 )
+        
+
+
     def __len__(self):
         return len(self.pairs_lines)
     

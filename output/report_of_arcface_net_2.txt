@@ -1,0 +1,28 @@
+[Start Convert]
+[Insert] 'import mindspore.ops.operations as P' is inserted to the converted file.
+line 1:0: [Convert] 'import torch' is converted to 'import mindspore'.
+line 2:0: [Convert] 'from torch import nn' is converted to 'import mindspore.nn as nn'.
+line 9:11: [Convert] 'nn.Conv2d' is converted to 'nn.Conv2d'. Parameters are converted. 
+line 21:11: [Convert] 'nn.Conv2d' is converted to 'nn.Conv2d'. Parameters are converted. 
+line 28:18: [Convert] 'nn.Module' is converted to 'nn.Cell'.
+line 37:19: [Convert] 'nn.BatchNorm2d' is converted to 'nn.BatchNorm2d'. Parameters are converted. 
+line 39:19: [Convert] 'nn.BatchNorm2d' is converted to 'nn.BatchNorm2d'. Parameters are converted. 
+line 40:21: [Convert] 'nn.PReLU' is converted to 'nn.PReLU'. Parameter is converted. 
+line 42:19: [Convert] 'nn.BatchNorm2d' is converted to 'nn.BatchNorm2d'. Parameters are converted. 
+line 46:4: [Convert] 'forward' is converted to 'construct'.
+line 60:14: [Convert] 'nn.Module' is converted to 'nn.Cell'.
+line 76:21: [Convert] 'nn.Conv2d' is converted to 'nn.Conv2d'. Parameters are converted. 
+line 77:19: [Convert] 'nn.BatchNorm2d' is converted to 'nn.BatchNorm2d'. Parameters are converted. 
+line 78:21: [Convert] 'nn.PReLU' is converted to 'nn.PReLU'. Parameter is converted. 
+line 95:19: [Convert] 'nn.BatchNorm2d' is converted to 'nn.BatchNorm2d'. Parameters are converted. 
+line 96:23: [Convert] 'nn.Dropout' is converted to 'nn.Dropout'. Parameters are converted. 
+line 97:18: [Convert] 'nn.Linear' is converted to 'nn.Dense'. Pay attention to reshape the input to 2 dims if it is 3 dims before, because MindSpore.nn.Dense only support 2-dim input.
+line 98:24: [Convert] 'nn.BatchNorm1d' is converted to 'nn.BatchNorm1d'. Parameters are converted. 
+line 99:8: [UnConvert] 'nn.init.constant_' didn't convert. 
+line 121:25: [Convert] 'nn.Sequential' is converted to 'nn.SequentialCell'. 
+line 123:16: [Convert] 'nn.BatchNorm2d' is converted to 'nn.BatchNorm2d'. Parameters are converted. 
+line 138:15: [Convert] 'nn.Sequential' is converted to 'nn.SequentialCell'. 
+line 140:4: [Convert] 'forward' is converted to 'construct'.
+line 150:12: [Convert] 'torch.flatten' is converted to 'P.Flatten'. 
+line 153:20: [UnConvert] 'x.float' didn't convert. Maybe could convert to mindspore.ops.operations.Cast.
+[Convert Over]

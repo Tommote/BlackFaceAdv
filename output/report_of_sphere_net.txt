@@ -1,0 +1,52 @@
+[Start Convert]
+line 1:0: [Convert] 'import torch' is converted to 'import mindspore'.
+line 2:0: [Convert] 'import torch.nn as nn' is converted to 'import mindspore.nn as nn'.
+line 3:0: [UnConvert] 'from torch.autograd import Variable' didn't convert. Please manual convert the code, along with the code associated with it.
+line 4:0: [Convert] 'import torch.nn.functional as F' is converted to 'import mindspore.ops.operations as P'.
+line 5:0: [UnConvert] 'from torch.nn import Parameter' didn't convert. Please manual convert the code, along with the code associated with it.
+line 62:16: [Convert] 'nn.Module' is converted to 'nn.Cell'.
+line 68:23: [Convert] 'nn.Conv2d' is converted to 'nn.Conv2d'. Parameters are converted. 
+line 69:23: [Convert] 'nn.PReLU' is converted to 'nn.PReLU'. Parameter is converted. 
+line 70:23: [Convert] 'nn.Conv2d' is converted to 'nn.Conv2d'. Parameters are converted. 
+line 71:23: [Convert] 'nn.PReLU' is converted to 'nn.PReLU'. Parameter is converted. 
+line 72:23: [Convert] 'nn.Conv2d' is converted to 'nn.Conv2d'. Parameters are converted. 
+line 73:23: [Convert] 'nn.PReLU' is converted to 'nn.PReLU'. Parameter is converted. 
+line 75:23: [Convert] 'nn.Conv2d' is converted to 'nn.Conv2d'. Parameters are converted. 
+line 76:23: [Convert] 'nn.PReLU' is converted to 'nn.PReLU'. Parameter is converted. 
+line 77:23: [Convert] 'nn.Conv2d' is converted to 'nn.Conv2d'. Parameters are converted. 
+line 78:23: [Convert] 'nn.PReLU' is converted to 'nn.PReLU'. Parameter is converted. 
+line 79:23: [Convert] 'nn.Conv2d' is converted to 'nn.Conv2d'. Parameters are converted. 
+line 80:23: [Convert] 'nn.PReLU' is converted to 'nn.PReLU'. Parameter is converted. 
+line 82:23: [Convert] 'nn.Conv2d' is converted to 'nn.Conv2d'. Parameters are converted. 
+line 83:23: [Convert] 'nn.PReLU' is converted to 'nn.PReLU'. Parameter is converted. 
+line 84:23: [Convert] 'nn.Conv2d' is converted to 'nn.Conv2d'. Parameters are converted. 
+line 85:23: [Convert] 'nn.PReLU' is converted to 'nn.PReLU'. Parameter is converted. 
+line 88:23: [Convert] 'nn.Conv2d' is converted to 'nn.Conv2d'. Parameters are converted. 
+line 89:23: [Convert] 'nn.PReLU' is converted to 'nn.PReLU'. Parameter is converted. 
+line 90:23: [Convert] 'nn.Conv2d' is converted to 'nn.Conv2d'. Parameters are converted. 
+line 91:23: [Convert] 'nn.PReLU' is converted to 'nn.PReLU'. Parameter is converted. 
+line 92:23: [Convert] 'nn.Conv2d' is converted to 'nn.Conv2d'. Parameters are converted. 
+line 93:23: [Convert] 'nn.PReLU' is converted to 'nn.PReLU'. Parameter is converted. 
+line 95:23: [Convert] 'nn.Conv2d' is converted to 'nn.Conv2d'. Parameters are converted. 
+line 96:23: [Convert] 'nn.PReLU' is converted to 'nn.PReLU'. Parameter is converted. 
+line 97:23: [Convert] 'nn.Conv2d' is converted to 'nn.Conv2d'. Parameters are converted. 
+line 98:23: [Convert] 'nn.PReLU' is converted to 'nn.PReLU'. Parameter is converted. 
+line 100:23: [Convert] 'nn.Conv2d' is converted to 'nn.Conv2d'. Parameters are converted. 
+line 101:23: [Convert] 'nn.PReLU' is converted to 'nn.PReLU'. Parameter is converted. 
+line 102:23: [Convert] 'nn.Conv2d' is converted to 'nn.Conv2d'. Parameters are converted. 
+line 103:23: [Convert] 'nn.PReLU' is converted to 'nn.PReLU'. Parameter is converted. 
+line 105:23: [Convert] 'nn.Conv2d' is converted to 'nn.Conv2d'. Parameters are converted. 
+line 106:23: [Convert] 'nn.PReLU' is converted to 'nn.PReLU'. Parameter is converted. 
+line 107:23: [Convert] 'nn.Conv2d' is converted to 'nn.Conv2d'. Parameters are converted. 
+line 108:23: [Convert] 'nn.PReLU' is converted to 'nn.PReLU'. Parameter is converted. 
+line 110:23: [Convert] 'nn.Conv2d' is converted to 'nn.Conv2d'. Parameters are converted. 
+line 111:23: [Convert] 'nn.PReLU' is converted to 'nn.PReLU'. Parameter is converted. 
+line 112:23: [Convert] 'nn.Conv2d' is converted to 'nn.Conv2d'. Parameters are converted. 
+line 113:23: [Convert] 'nn.PReLU' is converted to 'nn.PReLU'. Parameter is converted. 
+line 114:23: [Convert] 'nn.Conv2d' is converted to 'nn.Conv2d'. Parameters are converted. 
+line 115:23: [Convert] 'nn.PReLU' is converted to 'nn.PReLU'. Parameter is converted. 
+line 117:19: [Convert] 'nn.Linear' is converted to 'nn.Dense'. Pay attention to reshape the input to 2 dims if it is 3 dims before, because MindSpore.nn.Dense only support 2-dim input.
+line 121:4: [Convert] 'forward' is converted to 'construct'.
+line 138:12: [Convert] 'x.view' is converted to 'P.Reshape'. Only float Tensor is supported in mindspore.ops.operations.Reshape.
+line 138:19: [Convert] 'x.size' is converted to 'P.Shape'. 
+[Convert Over]

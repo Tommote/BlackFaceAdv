@@ -1,0 +1,24 @@
+[Start Convert]
+[Insert] 'import mindspore' is inserted to the converted file.
+[Insert] 'import mindspore.ops.operations as P' is inserted to the converted file.
+line 1:0: [Convert] 'import torch.nn as nn' is converted to 'import mindspore.nn as nn'.
+line 6:12: [Convert] 'nn.Module' is converted to 'nn.Cell'.
+line 9:21: [Convert] 'nn.Conv2d' is converted to 'nn.Conv2d'. Parameters are converted. 
+line 10:22: [Convert] 'nn.PReLU' is converted to 'nn.PReLU'. Parameter is converted. 
+line 11:21: [Convert] 'nn.Conv2d' is converted to 'nn.Conv2d'. Parameters are converted. 
+line 12:22: [Convert] 'nn.PReLU' is converted to 'nn.PReLU'. Parameter is converted. 
+line 14:4: [Convert] 'forward' is converted to 'construct'.
+line 18:13: [Convert] 'nn.Module' is converted to 'nn.Cell'.
+line 36:18: [Convert] 'nn.Linear' is converted to 'nn.Dense'. Pay attention to reshape the input to 2 dims if it is 3 dims before, because MindSpore.nn.Dense only support 2-dim input.
+line 40:29: [UnConvert] 'nn.Conv2d' didn't convert. Manually determine the conversion type.
+line 40:57: [UnConvert] 'nn.Linear' didn't convert. Manually determine the conversion type.
+line 42:20: [UnConvert] 'nn.init.xavier_uniform_' didn't convert. 
+line 43:20: [UnConvert] 'nn.init.constant_' didn't convert. 
+line 45:20: [UnConvert] 'nn.init.normal_' didn't convert. 
+line 50:22: [Convert] 'nn.Conv2d' is converted to 'nn.Conv2d'. Parameters are converted. 
+line 51:22: [Convert] 'nn.PReLU' is converted to 'nn.PReLU'. Parameter is converted. 
+line 55:15: [Convert] 'nn.Sequential' is converted to 'nn.SequentialCell'. 
+line 57:4: [Convert] 'forward' is converted to 'construct'.
+line 63:12: [Convert] 'x.view' is converted to 'P.Reshape'. Only float Tensor is supported in mindspore.ops.operations.Reshape.
+line 63:19: [Convert] 'x.size' is converted to 'P.Shape'. 
+[Convert Over]
