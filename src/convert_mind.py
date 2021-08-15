@@ -25,7 +25,8 @@ def load_mindspore_torch( torch_model:torch.nn.Module, mind_model ):
     state_dict_torch =  torch_model.state_dict()
 
     dict_m = mind_model.parameters_dict()
-
+    # print(dict_m.keys())
+    # print(state_dict_torch.keys())
     for name in dict_m.keys():
 
         param = dict_m[name]
@@ -33,17 +34,18 @@ def load_mindspore_torch( torch_model:torch.nn.Module, mind_model ):
         shape_mind = param.shape
         
         if name not in state_dict_torch:
-            print("paramter {} not exist in torch model".format(name))
             torch_name = map_name2(name)
+            print("paramter {} not exist in torch model and {}".format(name, torch_name))
         else:
+            print("the same name {}".format(name))
             torch_name = name
         # print(torch_name)
         shape_torch = state_dict_torch[torch_name].shape
 
         if shape_mind != shape_torch:
             raise 'The paramter {} error: mindspore shape is {} yet torch shape is {}'.format(name, shape_mind, shape_torch)
-        print(shape_mind)
-        print( state_dict_torch[torch_name].dtype )
+        # print(shape_mind)
+        # print( state_dict_torch[torch_name].numpy().dtype )
         param.set_data(  mindspore.Tensor(  state_dict_torch[torch_name].numpy() , dtype=mindspore.float32) )
 
 
@@ -69,8 +71,41 @@ def map_name2(mind_name:str):
     di = { 'moving_mean':'running_mean', 
             'w':'weight',
             'moving_variance':'running_var',
+            'gamma':'weight',
+            'beta':'bias' }
+
+    temp_list = mind_name.split('.')
+
+    res = ''
+
+    for temp in temp_list:
+        if temp in di:
+           new_name = di[temp] 
+        else:
+            new_name = temp
+        if res!='':
+            res = res + '.'+new_name
+        else:
+            res = new_name
+    
+    return res
+
+def map_name3(mind_name:str):
+
+    di ={
+        'batchnorm':{ 'moving_mean':'running_mean', 
+            'w':'weight',
+            'moving_variance':'running_var',
             'gamma':'bias',
-            'beta':'weight' }
+            'beta':'weight' },
+        
+        'prelu':{
+
+        },
+        'conv':{
+
+        }
+    } 
 
     temp_list = mind_name.split('.')
 
